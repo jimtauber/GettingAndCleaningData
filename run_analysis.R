@@ -132,6 +132,4 @@ groupDF <- group_by(masterDF, subject, activity)
 report <-groupDF %>% 
                 group_by(subject, activity) %>% 
                 summarise_each(funs(mean))
-write.table(report,"./report.txt")
-
-data <- read.table("./report.txt", header = TRUE)
+write.table(report,"./report.txt", row.names= FALSE)
